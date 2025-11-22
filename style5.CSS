@@ -1,19 +1,17 @@
-/* === VARIABLES === */
+V/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --bg-light: #32d3ff;
-    --brown-dark: hsl(324, 100%, 71%);
+    --brown-dark: #324, 100%, 71%;
     --accent: #d5f027;
     --text-dark: #193819;
 }
 
-/* === RESET === */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0
-}
-
-/* === BASE === */
 body {
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg-light);
@@ -21,139 +19,10 @@ body {
     line-height: 1.5;
 }
 
-/* === UTILITY CLASSES === */
-.meta-small {
-    color: hsl(0, 10%, 16%);
-    font-size: 13px
-}
-
-/* === NAVBAR === */
-.navbar {
-    background-color: var(--brown-dark);
-    color: #ba8484;
-    padding: 12px 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-.nav-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.nav-logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #fff;
-    margin: 0;
-}
-
-.nav-links {
-    display: flex;
-    gap: 24px;
-}
-
-.nav-links a {
-    color: #4a0544;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #f0cb98;
-}
-
-/* Mobile: Navigasi vertikal */
-@media (max-width: 700px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-}
-
-/* === HEADER === */
-.site-header {
-    background: transparent;
-    padding: 30px 0 10px;
-    position: relative;
-}
-
-.site-header .inner {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.site-title {
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--text-dark);
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #fd8b01;
-    margin-left: 20px;
-    font-size: 14px;
-}
-
-/* Mobile: Header */
-@media (max-width: 600px) {
-    .site-header .inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .site-title {
-        font-size: 36px;
-        margin-bottom: 10px;
-    }
-
-    .main-nav a {
-        margin: 0 10px;
-    }
-}
-
-/* === RIBBON (Tetap) === */
-.ribbon {
-    width: 60px;
-    height: 40px;
-    background: linear-gradient(#d38877, #433129);
-    position: absolute;
-    top: 78px;
-    left: 50%;
-    transform: translateX(-50%);
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
-}
-
-/* === CONTENT WRAPPER === */
-.site-main {
-    width: 90%;
-    max-width: 1100px;
-    margin: 30px auto 80px;
-}
-
-/* === HERO === */
-.hero {
+/* ---------------------------------------
+   HERO SECTION
+----------------------------------------*/
+.her {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -165,24 +34,24 @@ body {
     background: var(--brown-dark);
     color: #ff0808;
     padding: 60px 40px;
+    border-radius: 6px;
 }
 
 .hero-box h2 {
     font-size: 40px;
-    line-height: 1.05;
-    margin-bottom: 18px;
+    line-height: 1.1;
     font-weight: 700;
+    margin-bottom: 18px;
 }
 
 .hero-box .meta-small {
-    color: rgba(27, 22, 158, 0.85);
     font-size: 14px;
-    margin-bottom: 16px;
+    color: rgba(27, 22, 158, 0.85);
 }
 
-.hero-box .dots {
-    color: rgba(34, 0, 44, 0.6);
+.dots {
     font-size: 22px;
+    color: rgba(34, 0, 44,0.6);
     margin-top: 12px;
 }
 
@@ -190,45 +59,25 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
-/* Tablet & Mobile: Hero menjadi 1 kolom */
-@media (max-width: 900px) {
-    .hero {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-right img {
-        height: 300px;
-    }
-}
-
-/* Mobile: Hero Box Padding */
-@media (max-width: 600px) {
-    .hero-left .hero-box {
-        padding: 40px 20px;
-    }
-
-    .hero-box h2 {
-        font-size: 32px;
-    }
-}
-
-/* === FEATURES === */
+/* ---------------------------------------
+   FEATURES SECTION
+----------------------------------------*/
 .features {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 20px;
     margin-bottom: 30px;
 }
 
 .feature {
     display: flex;
-    background: var(--brown-dark);
-    color: #0e0951;
     align-items: center;
-    padding: 14px;
+    background: var(--brown-dark);
+    padding: 16px;
+    border-radius: 6px;
 }
 
 .feat-thumb {
@@ -236,147 +85,180 @@ body {
     height: 84px;
     object-fit: cover;
     margin-right: 14px;
+    border-radius: 4px;
 }
 
 .feat-body h3 {
     font-size: 18px;
     margin-bottom: 8px;
-    text-transform: uppercase;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* Tablet & Mobile: Features menjadi 1 kolom */
-@media (max-width: 900px) {
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    .feature {
-        padding: 10px;
-    }
+.meta-small {
+    font-size: 13px;
+    color: rgba(0,10%,16%);
 }
 
-
-/* === CONTENT AREA === */
+/* ---------------------------------------
+   CONTENT AREA
+----------------------------------------*/
 .content-area {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 40px;
 }
 
-/* Tablet & Mobile: Content Area menjadi 1 kolom (Sidebar di bawah) */
-@media (max-width: 900px) {
-    .content-area {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* === INTRO === */
+/* ---------------------------------------
+   INTRO SECTION
+----------------------------------------*/
 .intro {
     display: flex;
-    gap: 18px;
-    margin-bottom: 28px;
-    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
 .intro-thumb {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .intro-text .lead {
-    color: var(--text-dark);
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
 .intro-text .desc {
+    font-size: 14px;
     color: #000000;
-    margin-bottom: 8px;
 }
 
-.more {
-    display: inline-block;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* Mobile: Intro */
-@media (max-width: 600px) {
-    .intro {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-/* === NEWS === */
+/* ---------------------------------------
+   NEWS SECTION
+----------------------------------------*/
 .section-title {
+    font-size: 20px;
     font-weight: 700;
-    margin: 18px 0;
-    color: var(--text-dark);
+    margin: 12px 0;
 }
 
 .news-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2,1fr);
     gap: 20px;
+}
+
+.news-item {
+    background: var(--brown-dark);
+    padding: 16px;
+    border-radius: 6px;
 }
 
 .news-item img {
     width: 100%;
     height: 140px;
-    object-fit: cover;
     border-radius: 4px;
+    object-fit: cover;
     margin-bottom: 10px;
 }
 
 .news-item h5 {
     font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
     color: var(--text-dark);
     margin-bottom: 6px;
-    text-transform: uppercase;
 }
 
 .read {
-    text-decoration: none;
     color: var(--accent);
-    font-weight: 600;
+    text-decoration: none;
 }
 
-/* Mobile: News Row menjadi 1 kolom */
-@media (max-width: 600px) {
+/* ---------------------------------------
+   FOLLOW SECTION
+----------------------------------------*/
+.follow {
+    background: #193819;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.follow .socials a {
+    margin-right: 8px;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+/* ---------------------------------------
+   FOOTER
+----------------------------------------*/
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background: #324,100%,71%;
+    color: #193819;
+    margin-top: 40px;
+}
+
+/* ======================================================
+   RESPONSIVE TABLET (max-width: 900px)
+======================================================*/
+@media (max-width: 900px) {
+
+    .her {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
     .news-row {
         grid-template-columns: 1fr;
     }
 }
 
-/* === SIDEBAR === */
-.sidebar .box {
-    background: #78e3fb;
-    padding: 18px;
-    margin-bottom: 14px;
-    border-left: 6px solid rgba(168, 109, 109, 0.06);
-}
+/* ======================================================
+   RESPONSIVE PHONE (max-width: 600px)
+======================================================*/
+@media (max-width: 600px) {
 
-.sidebar .box h4 {
-    color: var(--text-dark);
-    margin-bottom: 8px;
-    font-size: 16px;
-}
+    .hero-box h2 {
+        font-size: 28px;
+    }
 
-/* === FIX MISSING (FOLLOW US) === */
-.follow {
-    /* Menambahkan style jika diperlukan */
-    padding: 18px;
-    background: #78e3fb;
-}
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.more-small {
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
+    .intro-thumb {
+        width: 100%;
+        height: auto;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feat-thumb {
+        margin: 0 0 12px 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .her {
+        padding: 10px;
+    }
+
+    .section-title {
+        text-align: center;
+    }
 }
